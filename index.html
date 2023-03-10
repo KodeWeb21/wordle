@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+</head>
+<body>
+    <header class="header">
+        <span class="title">Animal Wordle</span>
+    </header>
+    <main class="grid">
+        <table class="grid-container">
+            <tr class="grid-tr">
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+            </tr>
+            <tr class="grid-tr">
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+            </tr>
+            <tr class="grid-tr">
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+            </tr>
+            <tr class="grid-tr">
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+            </tr>
+            <tr class="grid-tr">
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+            </tr>
+            <tr class="grid-tr">
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+                <td class="grid-td"></td>
+            </tr>
+        </table>
+    </main>
+    <div class="keyboard">
+        <div class="keyboard-tr">
+            <button class="key">Q</button>
+            <button class="key">W</button>
+            <button class="key">E</button>
+            <button class="key">R</button>
+            <button class="key">T</button>
+            <button class="key">Y</button>
+            <button class="key">U</button>
+            <button class="key">I</button>
+            <button class="key">O</button>
+            <button class="key">P</button>
+        </div>
+        <div class="keyboard-tr">
+            <button class="key">A</button>
+            <button class="key">S</button>
+            <button class="key">D</button>
+            <button class="key">F</button>
+            <button class="key">G</button>
+            <button class="key">H</button>
+            <button class="key">J</button>
+            <button class="key">K</button>
+            <button class="key">L</button>
+            <button class="key">ñ</button>
+        </div>
+        <div class="keyboard-tr">
+            <button class="key key-special key-enter">ENTER</button>
+            <button class="key">Z</button>
+            <button class="key">X</button>
+            <button class="key">C</button>
+            <button class="key">V</button>
+            <button class="key">B</button>
+            <button class="key">N</button>
+            <button class="key">M</button>
+            <button class="key key-deleted key-special">
+                <img src="https://static-00.iconduck.com/assets.00/delete-icon-1024x820-wd4236po.png" alt="eliminar">
+            </button>
+        </div>
+    </div>
+    <div class="message hidden">
+        <div class="message__overlay">
+            <div class="message__container">
+                    <div class="message__close">
+                        <button class="close" id="btn-close">X</button>
+                    </div>
+                <h3 class="message__title">Instrucciones</h3>
+                <p class="description">Adivina la palabra en 6 Intentos.</p>
+
+                <ul class="instructions">
+                    <li class="instructions__item">Las palabra que busca es un tipo de animal o insecto.</li>
+                    <li class="instructions__item">El color de los mosaicos cambiara para mostrar que tan cerca estuvo su posicion de la palabra.</li>
+                </ul>
+
+                <h3>Ejemplos</h3>
+                <div class="wordle-example">
+                    <div class="guess letter-correct text-white">P</div>
+                    <div class="guess">E</div>
+                    <div class="guess">R</div>
+                    <div class="guess">R</div>  
+                    <div class="guess">O</div>
+                </div>
+                <p><strong>P</strong> esta en la palabra y en la posicion correcta</p>
+
+                <div class="wordle-example">
+                    <div class="guess">M</div>
+                    <div class="guess letter-is text-white">O</div>
+                    <div class="guess">S</div>
+                    <div class="guess">C</div>  
+                    <div class="guess">A</div>
+                </div>
+                <p><strong>O</strong> esta en la palabra pero en la posicion incorrecta</p>
+
+                <div class="wordle-example">
+                    <div class="guess">C</div>
+                    <div class="guess">A</div>
+                    <div class="guess">B</div>
+                    <div class="guess letter-not text-white" >R</div>  
+                    <div class="guess">A</div>
+                </div>
+                <p><strong>R</strong> no esta en la palabra</p>
+            </div>
+        </div>
+    </div>
+    <div class="message message--dialog message--game-over hidden">
+        <div class="message__overlay">
+            <div class="message__container">
+                <div class="message__close">
+                    <button class="close">X</button>
+                </div>
+                <h3 class="message__title message__title--dialog">Perdiste</h3>
+                <p class="description description--dialog">La respuesta era:</p>
+                <div class="answer">
+                    <span id="respuesta" class="answer__text">Perro</span>
+                </div>
+                <button class="btngame text-white">New Game</button>
+            </div>
+        </div>
+    </div>
+    <div class="message message--dialog message--victory hidden">
+        <div class="message__overlay">
+            <div class="message__container">
+                <div class="message__close">
+                    <button class="close">X</button>
+                </div>
+                <h3 class="message__title message__title--dialog">Felicitaciones!</h3>
+                <p class="description description--dialog">Eres <span class="bold">genial</span> en esto.</p>
+                <p>Podras volver a descubrir la palabra</p>
+                <button class="btngame text-white">New Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
