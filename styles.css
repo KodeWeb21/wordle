@@ -242,9 +242,10 @@ body,
     border-color: #44444473;
 }
 
-@media screen and (min-width: 375px){
+@media screen and (min-width: 360px){
     :root{
         --padding-key-h: 9px;
+        --padding-key: 15px;
     }
 }
 
