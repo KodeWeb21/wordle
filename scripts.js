@@ -225,3 +225,7 @@ $keyboard.addEventListener('click',responseClick);
 
 document.body.addEventListener('keydown',responseKeyboard)
 
+document.ondblclick = function(e) {
+    e.preventDefault();
+}
+
