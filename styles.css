@@ -79,6 +79,8 @@ body,
     border-radius: 3px;
     background-color: #d3d6da;
     cursor: pointer;
+    border: 0;
+    color: inherit;
 }
 
 .keyboard{
@@ -255,7 +257,7 @@ body,
 
 @media screen and (min-width: 375px){
     :root{
-        --padding-key-h: 12px;
+        --padding-key-h: .65rem;
         --padding-key: 15px;
     }
 
@@ -263,6 +265,11 @@ body,
         width: 55px;
         height: 55px;
     }
+    
+    .keyboard-tr{
+        gap: 2px;
+    }
+
 }
 
 @media screen and (min-width: 768px){
