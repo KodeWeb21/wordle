@@ -23,7 +23,7 @@
 }
 
 body{
-    min-height: 100vh;
+    height: 91vh;
     display: flex;
     flex-direction: column;
     max-width: 1430px;
@@ -249,10 +249,17 @@ body,
     }
 }
 
+@media screen and (min-width: 425px){
+    :root{
+        --padding-key-h: 12px;
+        --padding-key: 15px;
+    }
+}
+
 @media screen and (min-width: 768px){
     :root{
         --padding-key: 15px;
-        --padding-key-h: 10px; 
+        --padding-key-h: 15px; 
     }
 }
 
@@ -265,7 +272,7 @@ body,
 @media screen and (min-width: 1440px){
 
     :root{
-        --padding-key: 20px;
+        --padding-key: 15px;
         --padding-key-h: 17px;
     }
 
