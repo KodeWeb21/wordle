@@ -247,12 +247,21 @@ body,
         --padding-key-h: 9px;
         --padding-key: 15px;
     }
+    .grid-td{
+        width: 30px;
+        height: 30px;
+    }
 }
 
-@media screen and (min-width: 425px){
+@media screen and (min-width: 375px){
     :root{
         --padding-key-h: 12px;
         --padding-key: 15px;
+    }
+
+    .grid-td{
+        width: 55px;
+        height: 55px;
     }
 }
 
